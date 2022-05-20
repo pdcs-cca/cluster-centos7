@@ -7,12 +7,13 @@ Requiere de busubox http  y mirror de la instalación
 git clone https://github.com/pdcs-cca/cluster-centos7.git
 cd cluster-centos7
 curl -LO https://www.busybox.net/downloads/binaries/1.35.0-x86_64-linux-musl/busybox_HTTPD
+chmod +x busybox_HTTPD
 ~~~
 
 ## RSYNC
 ~~~bash
-MIRROR=rsync://mirror.facebook.net/centos/7.9.2009/os/x86_64
-rsync -Pa $MIRROR .
+ MIRROR=rsync://mirror.facebook.net/centos/7.9.2009/os/x86_64
+ rsync -Pa $MIRROR .
 ~~~
 
 ## WGET
