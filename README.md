@@ -10,6 +10,11 @@ curl -LO https://www.busybox.net/downloads/binaries/1.35.0-x86_64-linux-musl/bus
 chmod +x busybox_HTTPD
 ~~~
 
+~~~bash
+yum -y install syslinux
+cp -v /usr/share/syslinux/pxelinux.0 .
+~~~
+
 ## RSYNC
 ~~~bash
  MIRROR_RSYNC=rsync://mirror.facebook.net/centos/7.9.2009/os/x86_64
