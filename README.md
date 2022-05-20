@@ -12,21 +12,22 @@ chmod +x busybox_HTTPD
 
 ## RSYNC
 ~~~bash
- MIRROR=rsync://mirror.facebook.net/centos/7.9.2009/os/x86_64
- rsync -Pa $MIRROR .
+ MIRROR_RSYNC=rsync://mirror.facebook.net/centos/7.9.2009/os/x86_64
+ rsync -Pa $MIRROR_RSYNC .
 ~~~
 
 ## WGET
 ~~~bash
-MIRROR=http://mirror.facebook.net/centos/7.9.2009/os/x86_64
-# wget --mirror  --no-clobber --no-host-directories --convert-links --adjust-extension  --no-parent $MIRROR
+MIRROR_WGET=http://mirror.facebook.net/centos/7.9.2009/os/x86_64
+# wget --mirror --continue --no-host-directories --convert-links --adjust-extension  --no-parent $MIRROR
 #--mirror -m 
-#--no-clobber -nc
+#--continue -c 
 #--no-host-directories -nH
 #--convert-links -k
 #--no-parent -np
 #--adjust-extension -E 
-wget -m -nc -nH -k -np -E  $MIRROR
+#--cut-dirs=3  centos/7.9.2009/os/x86_64/ -> x86_64/
+wget -c -m -nc -nH  -np -E --cut-dirs=3 $MIRROR_WGET
 ~~~
 
 bash setup-DHCP-TFTP.sh
