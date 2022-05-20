@@ -20,12 +20,13 @@ chmod +x busybox_HTTPD
 ~~~bash
 MIRROR=http://mirror.facebook.net/centos/7.9.2009/os/x86_64
 # wget --mirror  --no-clobber --no-host-directories --convert-links --adjust-extension  --no-parent $MIRROR
+#--mirror -m 
 #--no-clobber -nc
 #--no-host-directories -nH
 #--convert-links -k
 #--no-parent -np
 #--adjust-extension -E 
-wget -nc -nH -k -np -E  $MIRROR
+wget -m -nc -nH -k -np -E  $MIRROR
 ~~~
 
 bash setup-DHCP-TFTP.sh
