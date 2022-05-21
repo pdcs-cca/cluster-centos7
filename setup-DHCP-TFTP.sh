@@ -51,7 +51,7 @@ ln -sfv $NETBOOT_ROOT/pxelinux.cfg/$NODE_HOSTNAME  $NETBOOT_ROOT/pxelinux.cfg/$(
 
 _gen-DHCP(){
 
-test ! -e $NETBOOT_ROOT/global.conf  && echo "leasefile-ro 
+test ! -e $NETBOOT_ROOT/dnsmasq.cfg/global.conf  && echo "leasefile-ro 
 no-hosts 
 log-queries 
 no-daemon 
